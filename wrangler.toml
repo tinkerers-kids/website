@@ -4,5 +4,8 @@
 name = "levins-coding-class"
 compatibility_date = "2025-01-25"
 
+[build]
+command = "npm run build"
+
 [assets]
 directory = "./build"
