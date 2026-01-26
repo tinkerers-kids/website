@@ -115,7 +115,7 @@ Diese Fehler können den Mentoring-Erfolg massiv gefährden. Lerne aus unseren E
 **Was Eltern wissen müssen:**
 - Warum Linux/macOS notwendig ist
 - Warum Admin-Zugang wichtig ist
-- Wie der Mentoring funktioniert (asynchron, eigenes Tempo)
+- Wie das Mentoring funktioniert (asynchron, eigenes Tempo)
 - Wo sie Fragen stellen können
 
 **Wie Eltern helfen können:**
@@ -159,7 +159,7 @@ Eltern müssen **aktiv kooperieren** und diese Programme **vorenthalten**:
 - Kind entdeckt die Vorteile von Code-basierter Dokumenterstellung
 
 **Kommunikation mit Eltern:**
-> "Bitte stellen Sie sicher, dass auf dem Computer, den Ihr Kind für den Mentoring nutzt, **keine Textverarbeitungs-Software** wie Word oder LibreOffice installiert ist. Das ist essentiell, damit Ihr Kind die Motivation behält, Typst zu lernen. Für Schulaufgaben kann ein separates System genutzt werden."
+> "Bitte stellen Sie sicher, dass auf dem Computer, den Ihr Kind für das Mentoring nutzt, **keine Textverarbeitungs-Software** wie Word oder LibreOffice installiert ist. Das ist essentiell, damit Ihr Kind die Motivation behält, Typst zu lernen. Für Schulaufgaben kann ein separates System genutzt werden."
 
 **Wichtig:** Das ist KEINE Schikane, sondern **pädagogisch notwendig**:
 - Wie beim Sprachenlernen: Nur Englisch sprechen, um Englisch zu lernen
@@ -272,7 +272,7 @@ Die Lernkurve ist anfangs steiler, aber:
 
 ### "Was ist mit Kindern, die langsam lernen?"
 
-**Antwort:** Der Mentoring passt sich an.
+**Antwort:** Das Mentoring passt sich an.
 
 - Kein Zeitdruck
 - Kein Leistungsvergleich
@@ -281,7 +281,7 @@ Die Lernkurve ist anfangs steiler, aber:
 
 ## Kontakt und Austausch
 
-Möchtest du einen ähnlichen Mentoring aufsetzen? Hast du Fragen oder Anregungen?
+Möchtest du ein ähnliches Mentoring aufsetzen? Hast du Fragen oder Anregungen?
 
 **GitHub-Organisation:**
 - [tinkerers-kids auf GitHub](https://github.com/orgs/tinkerers-kids) - Alle Projekte und Materialien
@@ -299,4 +299,4 @@ Möchtest du einen ähnlichen Mentoring aufsetzen? Hast du Fragen oder Anregunge
 
 ---
 
-**Viel Erfolg beim Aufsetzen deines eigenen Mentoringes! Gemeinsam machen wir Programmieren für Kinder zugänglich.**
+**Viel Erfolg beim Aufsetzen deines eigenen Mentorings! Gemeinsam machen wir Programmieren für Kinder zugänglich.**

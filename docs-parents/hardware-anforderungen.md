@@ -12,7 +12,7 @@ Falls du die **Cloud-Lösung (Option B)** nutzt, kannst du diese Seite überspri
 
 ## Betriebssystem - Linux ist Pflicht!
 
-Für diesen Mentoring wird **zwingend ein Unix-basiertes Betriebssystem** benötigt:
+Für dieses Mentoring wird **zwingend ein Unix-basiertes Betriebssystem** benötigt:
 
 - ✅ **Linux** (Ubuntu, Debian, Fedora, etc.) - **STARK EMPFOHLEN**
 - ✅ **macOS** (alle aktuellen Versionen) - funktioniert gut
@@ -106,7 +106,7 @@ Für technischen Support und Hilfestellung benötige ich:
 :::danger Sehr wichtig - Bitte unbedingt lesen!
 Da ich (Levin Keller) **Fernzugriff und vollständigen Admin-Zugriff** auf das Gerät benötige, gelten folgende Regeln:
 
-**Das Gerät muss ausschließlich für den Mentoring verwendet werden:**
+**Das Gerät muss ausschließlich für das Mentoring verwendet werden:**
 - ✅ Nur Arbeitsunterlagen deines Kindes
 - ❌ **Keine** persönlichen Daten von Eltern
 - ❌ **Keine** Daten von Geschwistern

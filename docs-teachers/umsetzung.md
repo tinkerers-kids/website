@@ -120,7 +120,7 @@ Das Mentoring ist bewusst **asynchron** aufgebaut:
 
 **Starter-Projekte:**
 - Einfaches Typst-Dokument als erste Übung
-- Git-Repository-Template für neue Mentee
+- Git-Repository-Template für neue Mentees
 - Onboarding-Checkliste
 
 **Projekt-Ideen:**
@@ -140,10 +140,10 @@ Für allgemeine Fragen und Austausch gibt es ein [öffentliches Diskussionsforum
 
 **Open Source Philosophie:**
 - Alle Kursmaterialien können frei verwendet werden
-- Ermutige Mentee, zu Open Source beizutragen
+- Ermutige Mentees, zu Open Source beizutragen
 - Zeige, wie echte Entwickler zusammenarbeiten
 
-**Austausch mit anderen Mentor:innenn:**
+**Austausch mit anderen Mentor:innen:**
 - GitHub Discussions in diesem Repository
 - Fragen und Erfahrungen teilen
 - Von anderen lernen

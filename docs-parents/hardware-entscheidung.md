@@ -4,11 +4,11 @@ sidebar_position: 2
 
 # Hardware-Entscheidung
 
-Die wichtigste Frage zuerst: **Welche Hardware soll dein Kind für den Mentoring nutzen?**
+Die wichtigste Frage zuerst: **Welche Hardware soll dein Kind für das Mentoring nutzen?**
 
 ## Die Ausgangssituation
 
-Es ist völlig verständlich, dass du nicht sofort mehrere hundert Euro für Hardware ausgeben möchtest, wenn du noch nicht weißt, ob dein Kind langfristig am Mentoring teilnehmen wird. Vielleicht möchte dein Kind den Mentoring erst einmal ausprobieren, bevor ihr in dedizierte Hardware investiert.
+Es ist völlig verständlich, dass du nicht sofort mehrere hundert Euro für Hardware ausgeben möchtest, wenn du noch nicht weißt, ob dein Kind langfristig am Mentoring teilnehmen wird. Vielleicht möchte dein Kind das Mentoring erst einmal ausprobieren, bevor ihr in dedizierte Hardware investiert.
 
 ## Zwei Optionen
 
@@ -88,7 +88,7 @@ Du hast grundsätzlich zwei Möglichkeiten:
 6. Die Server-Konfiguration ist automatisiert ([Details hier](https://github.com/tinkerers-kids/cloud-config))
 
 :::tip Wann diese Option wählen?
-- Du möchtest den Mentoring erst ausprobieren
+- Du möchtest das Mentoring erst ausprobieren
 - Keine Anfangsinvestition gewünscht
 - Ihr habt bereits einen Computer, den dein Kind nutzen kann
 - Stabile Internetverbindung vorhanden
@@ -154,7 +154,7 @@ Ich (Levin Keller) benötige **Fernzugriff und vollständigen Admin-Zugriff** au
 
 ### Bei dedizierter Hardware:
 - Ich habe vollen Zugriff auf das Gerät
-- Das Gerät **muss ausschließlich** für den Mentoring genutzt werden
+- Das Gerät **muss ausschließlich** für das Mentoring genutzt werden
 - **Keine** privaten Daten auf diesem Gerät speichern
 - **Keine** Daten von Geschwistern, Eltern oder anderen Familienmitgliedern
 - Bei geteilten Familien-Computern: **Cloud-Lösung ist Pflicht**

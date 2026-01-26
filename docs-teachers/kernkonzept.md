@@ -194,7 +194,7 @@ Was ist der richtige Syntax?"
 - Jede Kollaboration
 - Jede professionelle Arbeit
 
-## Warum das für Mentor:in entscheidend ist
+## Warum das für Mentor:innen entscheidend ist
 
 **Als Mentor:in musst du verstehen:**
 
