@@ -1,7 +1,7 @@
 # Cloudflare Workers - Static Assets
 # https://developers.cloudflare.com/workers/static-assets/
 
-name = "tinkerers-kids"
+name = "tinkerer-kids-mentoring-website"
 compatibility_date = "2025-01-25"
 
 [build]
