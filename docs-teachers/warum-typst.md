@@ -4,7 +4,7 @@ sidebar_position: 4
 
 # Warum Typst? - Die Content-Perspektive
 
-Typst ist mehr als nur ein "Word-Ersatz" - es ist das **perfekte erste Projekt-Format** für den Kurs, weil es die reproduzierbare Problemkommunikation optimal unterstützt.
+Typst ist mehr als nur ein "Word-Ersatz" - es ist das **perfekte erste Projekt-Format** für das Mentoring, weil es die reproduzierbare Problemkommunikation optimal unterstützt.
 
 ## 1. Text-basiertes Format ermöglicht Reproduzierbarkeit (DER HAUPTGRUND!)
 

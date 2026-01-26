@@ -61,7 +61,7 @@ Regelmäßig treffen sich alle Schüler:innen:
 
 ## 🎉 Bereit loszulegen?
 
-Lies weiter bei [Erste Schritte](/schueler/erste-schritte) um zu erfahren, was du brauchst!
+Lies weiter bei [Erste Schritte](/mentees/erste-schritte) um zu erfahren, was du brauchst!
 
 ---
 

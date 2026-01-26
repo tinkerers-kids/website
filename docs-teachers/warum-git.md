@@ -21,7 +21,7 @@ Git ist das wichtigste Tool in der modernen Softwareentwicklung. Hier sind die G
 - Helfer: `git clone` + `git checkout` → hat EXAKT den gleichen Zustand
 - Helfer kann Problem reproduzieren und lösen
 
-**Dies ist der fundamentale Grund, warum Git im Kurs unverzichtbar ist.**
+**Dies ist der fundamentale Grund, warum Git im Mentoring unverzichtbar ist.**
 
 ## 2. Versionskontrolle verstehen
 

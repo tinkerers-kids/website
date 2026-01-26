@@ -89,7 +89,7 @@ Das Mentoring ist bewusst **asynchron** aufgebaut:
 ## Fernbetreuung
 
 **Technischer Support:**
-- Fernzugriff auf Schüler-Computer
+- Fernzugriff auf Mentee-Computer
 - Schnelle Problemlösung
 - Video-Calls bei Bedarf
 
@@ -120,7 +120,7 @@ Das Mentoring ist bewusst **asynchron** aufgebaut:
 
 **Starter-Projekte:**
 - Einfaches Typst-Dokument als erste Übung
-- Git-Repository-Template für neue Schüler
+- Git-Repository-Template für neue Mentees
 - Onboarding-Checkliste
 
 **Projekt-Ideen:**
@@ -133,17 +133,17 @@ Das Mentoring ist bewusst **asynchron** aufgebaut:
 ### Community und Support
 
 **GitHub-Organisation:**
-Alle Kursmaterialien und Projekte sind in der [GitHub-Organisation "levins-coding-class"](https://github.com/orgs/levins-coding-class) gebündelt.
+Alle Kursmaterialien und Projekte sind in der [GitHub-Organisation "tinkerers-kids"](https://github.com/orgs/tinkerers-kids) gebündelt.
 
 **Öffentliches Diskussionsforum:**
-Für allgemeine Fragen und Austausch gibt es ein [öffentliches Diskussionsforum](https://github.com/levins-coding-class/website/discussions). Hier können Lehrkräfte, Eltern und Mentees Erfahrungen teilen und Fragen stellen.
+Für allgemeine Fragen und Austausch gibt es ein [öffentliches Diskussionsforum](https://github.com/tinkerers-kids/website/discussions). Hier können Mentor:innen, Eltern und Mentees Erfahrungen teilen und Fragen stellen.
 
 **Open Source Philosophie:**
 - Alle Kursmaterialien können frei verwendet werden
-- Ermutige Schüler, zu Open Source beizutragen
+- Ermutige Mentees, zu Open Source beizutragen
 - Zeige, wie echte Entwickler zusammenarbeiten
 
-**Austausch mit anderen Lehrkräften:**
+**Austausch mit anderen Mentor:innen:**
 - GitHub Discussions in diesem Repository
 - Fragen und Erfahrungen teilen
 - Von anderen lernen

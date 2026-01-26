@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Gängige Fehler vermeiden
 
-Diese Fehler können den Kurserfolg massiv gefährden. Lerne aus unseren Erfahrungen:
+Diese Fehler können den Mentoring-Erfolg massiv gefährden. Lerne aus unseren Erfahrungen:
 
 ## ❌ FEHLER #1: Windows-Computer zulassen
 
@@ -19,13 +19,13 @@ Diese Fehler können den Kurserfolg massiv gefährden. Lerne aus unseren Erfahru
 - Die Zeit, die du mit Windows-Problemen verbringst, fehlt für echten Unterricht
 
 **Die Lösung:**
-- **Nur Linux oder macOS** im Kurs zulassen
+- **Nur Linux oder macOS** im Mentoring zulassen
 - Am besten: **Alle Kinder bekommen gleiche Hardware** (z.B. Raspberry Pi 500+)
 - Falls ein Kind nur Windows-PC hat: **Cloud-Lösung über Hetzner nutzen**
 - Bei geteilten Familien-Computern: **Cloud-Lösung ist Pflicht** (Datenschutz!)
 
 **Konkrete Regel:**
-> "Teilnahme am Kurs erfordert Linux oder macOS. Windows (auch mit WSL) ist nicht zugelassen. Bei Windows-Computern oder geteilten Familien-Rechnern wird die Cloud-Lösung verwendet."
+> "Teilnahme am Mentoring erfordert Linux oder macOS. Windows (auch mit WSL) ist nicht zugelassen. Bei Windows-Computern oder geteilten Familien-Rechnern wird die Cloud-Lösung verwendet."
 
 **Warum das nicht hart, sondern notwendig ist:**
 - Ein einziger Windows-Nutzer kann 50% deiner Support-Zeit binden
@@ -115,7 +115,7 @@ Diese Fehler können den Kurserfolg massiv gefährden. Lerne aus unseren Erfahru
 **Was Eltern wissen müssen:**
 - Warum Linux/macOS notwendig ist
 - Warum Admin-Zugang wichtig ist
-- Wie der Kurs funktioniert (asynchron, eigenes Tempo)
+- Wie das Mentoring funktioniert (asynchron, eigenes Tempo)
 - Wo sie Fragen stellen können
 
 **Wie Eltern helfen können:**
@@ -149,8 +149,8 @@ Eltern müssen **aktiv kooperieren** und diese Programme **vorenthalten**:
 
 1. **Word/LibreOffice:** NICHT installieren oder deinstallieren
 2. **Visuelle Tools:** Scratch, Blockly, etc. entfernen
-3. **Cloud-Alternativen:** Google Docs, Notion für Kursprojekte nicht erlauben
-4. **Klare Regel:** "Für Schulaufgaben kannst du Word nutzen, aber für Coding-Kurs nur Typst"
+3. **Cloud-Alternativen:** Google Docs, Notion für Mentoringprojekte nicht erlauben
+4. **Klare Regel:** "Für Schulaufgaben kannst du Word nutzen, aber für Coding-Mentoring nur Typst"
 
 **Warum das funktioniert:**
 - Kein "einfacher Ausweg" verfügbar
@@ -159,7 +159,7 @@ Eltern müssen **aktiv kooperieren** und diese Programme **vorenthalten**:
 - Kind entdeckt die Vorteile von Code-basierter Dokumenterstellung
 
 **Kommunikation mit Eltern:**
-> "Bitte stellen Sie sicher, dass auf dem Computer, den Ihr Kind für den Kurs nutzt, **keine Textverarbeitungs-Software** wie Word oder LibreOffice installiert ist. Das ist essentiell, damit Ihr Kind die Motivation behält, Typst zu lernen. Für Schulaufgaben kann ein separates System genutzt werden."
+> "Bitte stellen Sie sicher, dass auf dem Computer, den Ihr Kind für das Mentoring nutzt, **keine Textverarbeitungs-Software** wie Word oder LibreOffice installiert ist. Das ist essentiell, damit Ihr Kind die Motivation behält, Typst zu lernen. Für Schulaufgaben kann ein separates System genutzt werden."
 
 **Wichtig:** Das ist KEINE Schikane, sondern **pädagogisch notwendig**:
 - Wie beim Sprachenlernen: Nur Englisch sprechen, um Englisch zu lernen
@@ -207,7 +207,7 @@ Eltern müssen **aktiv kooperieren** und diese Programme **vorenthalten**:
 - Kein Zugriff auf private Daten der Familie nötig
 - Du arbeitest nur auf dem Cloud-Server (Linux)
 - Ca. 7 EUR/Monat Kosten
-**Details:** Siehe [Cloud-Config Repository](https://github.com/levins-coding-class/cloud-config)
+**Details:** Siehe [Cloud-Config Repository](https://github.com/tinkerers-kids/cloud-config)
 
 ## Verbesserungen und offene Fragen
 
@@ -272,7 +272,7 @@ Die Lernkurve ist anfangs steiler, aber:
 
 ### "Was ist mit Kindern, die langsam lernen?"
 
-**Antwort:** Der Kurs passt sich an.
+**Antwort:** Das Mentoring passt sich an.
 
 - Kein Zeitdruck
 - Kein Leistungsvergleich
@@ -281,13 +281,13 @@ Die Lernkurve ist anfangs steiler, aber:
 
 ## Kontakt und Austausch
 
-Möchtest du einen ähnlichen Kurs aufsetzen? Hast du Fragen oder Anregungen?
+Möchtest du ein ähnliches Mentoring aufsetzen? Hast du Fragen oder Anregungen?
 
 **GitHub-Organisation:**
-- [levins-coding-class auf GitHub](https://github.com/orgs/levins-coding-class) - Alle Projekte und Materialien
+- [tinkerers-kids auf GitHub](https://github.com/orgs/tinkerers-kids) - Alle Projekte und Materialien
 
 **Öffentliches Diskussionsforum:**
-- [Diskussionen starten](https://github.com/levins-coding-class/website/discussions)
+- [Diskussionen starten](https://github.com/tinkerers-kids/website/discussions)
 - Fragen stellen
 - Erfahrungen teilen
 
@@ -299,4 +299,4 @@ Möchtest du einen ähnlichen Kurs aufsetzen? Hast du Fragen oder Anregungen?
 
 ---
 
-**Viel Erfolg beim Aufsetzen deines eigenen Kurses! Gemeinsam machen wir Programmieren für Kinder zugänglich.**
+**Viel Erfolg beim Aufsetzen deines eigenen Mentorings! Gemeinsam machen wir Programmieren für Kinder zugänglich.**

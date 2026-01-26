@@ -77,7 +77,7 @@ Je genauer dein Issue, desto schneller kann ich dir helfen. Ich kann dein Proble
 
 ### GitHub Discussions
 - Für allgemeine Fragen
-- Zum Austausch mit anderen Schüler:innen
+- Zum Austausch mit anderen Mentees
 - Für Ideen und Vorschläge
 - Weniger dringend als Issues
 
@@ -104,7 +104,7 @@ Je genauer dein Issue, desto schneller kann ich dir helfen. Ich kann dein Proble
 1. **Sei spezifisch:** Je genauer, desto besser
 2. **Zeige Code:** Nicht beschreiben, sondern zeigen
 3. **Zeige Fehler:** Kopiere die komplette Fehlermeldung
-4. **Sei geduldig:** Antworten kommen nicht sofort (asynchroner Kurs!)
+4. **Sei geduldig:** Antworten kommen nicht sofort (asynchrones Mentoring!)
 5. **Probiere selbst:** Erst versuchen, dann fragen
 
 ## 🤝 Anderen helfen
@@ -143,8 +143,8 @@ Das ist eine **super wichtige Fähigkeit** für alle Programmierer!
 
 ## 📚 Nützliche Links
 
-- **GitHub Issues:** [Issues erstellen](https://github.com/levins-coding-class/website/issues)
-- **Discussions:** [Diskussionen](https://github.com/levins-coding-class/website/discussions)
+- **GitHub Issues:** [Issues erstellen](https://github.com/tinkerers-kids/website/issues)
+- **Discussions:** [Diskussionen](https://github.com/tinkerers-kids/website/discussions)
 - **Typst Dokumentation:** [typst.app/docs](https://typst.app/docs)
 - **Git Dokumentation:** [git-scm.com/doc](https://git-scm.com/doc)
 

@@ -32,7 +32,7 @@ Nein, das ist nicht notwendig. Alle technischen Aspekte werden über den Fernzug
 
 ### Wir haben nur einen Windows-Computer. Geht das trotzdem?
 
-Ja, aber **nur über die Cloud-Lösung**! Windows (auch mit WSL) ist im Kurs nicht zugelassen, da es zu viele Probleme verursacht.
+Ja, aber **nur über die Cloud-Lösung**! Windows (auch mit WSL) ist im Mentoring nicht zugelassen, da es zu viele Probleme verursacht.
 
 **Die Lösung:** Dein Kind verbindet sich per Remote Desktop zu einem Cloud-Server mit Linux. Auf eurem Windows-Computer wird nichts installiert außer einem RDP-Client (ist bei Windows bereits eingebaut). Siehe [Hardware-Entscheidung](/eltern/hardware-entscheidung).
 
@@ -124,7 +124,7 @@ Moderne Entwicklung nutzt:
 - Code-basierte Dokumentenerstellung
 - Git für Versionskontrolle und Kollaboration
 
-Siehe auch: [Info für Lehrkräfte](/lehrkraefte/kein-office) für eine ausführliche Erklärung.
+Siehe auch: [Info für Mentor:innen](/mentoren/kein-office) für eine ausführliche Erklärung.
 
 ## Datenschutz-Fragen
 
@@ -187,7 +187,7 @@ Nein. Alle Software ist kostenlos und Open Source. GitHub ist kostenlos. Die ein
 ### Ich habe eine Frage, die hier nicht beantwortet wird
 
 Kein Problem! Kontaktiere mich über:
-- [GitHub Discussions](https://github.com/levins-coding-class/website/discussions)
+- [GitHub Discussions](https://github.com/tinkerers-kids/website/discussions)
 - Direkter Kontakt (wenn du mich persönlich kennst)
 
 ### Wie melde ich mein Kind an?

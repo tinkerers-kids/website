@@ -4,7 +4,7 @@ sidebar_position: 2
 
 # Der entscheidende Punkt: Reproduzierbare Problemkommunikation
 
-**Dies ist DER zentrale pädagogische Punkt des gesamten Kurses.**
+**Dies ist DER zentrale pädagogische Punkt des gesamten Mentorings.**
 
 ## Das Problem, das gelöst werden muss
 
@@ -14,7 +14,7 @@ Stell dir vor: Ein Kind (nennen wir es Lisa) sitzt vor ihrem Computer und versuc
 
 ## Die traditionelle (schlechte) Lösung
 
-**Typisches Szenario in klassischen Kursen:**
+**Typisches Szenario in klassischen Mentoring-Programmen:**
 
 Lisa fragt: "Es funktioniert nicht!"
 
@@ -24,7 +24,7 @@ Lisa fragt: "Es funktioniert nicht!"
 - Wie sieht ihr Code aus?
 - Welche Fehlermeldung erscheint?
 
-Der Helfer (Lehrer, Eltern, Freund) kann das Problem **nicht reproduzieren**, weil er nicht weiß, was Lisa genau gemacht hat.
+Der Helfer (Mentor:in, Eltern, Freund) kann das Problem **nicht reproduzieren**, weil er nicht weiß, was Lisa genau gemacht hat.
 
 **Resultat:**
 - Vage Vermutungen: "Hast du mal versucht...?"
@@ -67,7 +67,7 @@ Datei: `dinosaurier.typ`, Zeile 12
 Commit: abc123
 ```
 
-**3. Der Helfer (z.B. Lehrer) kann das Problem EXAKT reproduzieren:**
+**3. Der Helfer (z.B. Mentor:in) kann das Problem EXAKT reproduzieren:**
 
 ```bash
 # Helfer auf seinem Computer:
@@ -104,7 +104,7 @@ git checkout abc123
 
 ## Das ist die Kernkompetenz
 
-**Was Kinder in diesem Kurs WIRKLICH lernen:**
+**Was Kinder in diesem Mentoring WIRKLICH lernen:**
 
 Nicht nur Programmieren, sondern:
 
@@ -194,11 +194,11 @@ Was ist der richtige Syntax?"
 - Jede Kollaboration
 - Jede professionelle Arbeit
 
-## Warum das für Lehrer entscheidend ist
+## Warum das für Mentor:innen entscheidend ist
 
-**Als Lehrer musst du verstehen:**
+**Als Mentor:in musst du verstehen:**
 
-Dies ist NICHT nur ein technisches Detail ("Git ist nützlich"). Dies ist **DAS zentrale Lernziel** des Kurses.
+Dies ist NICHT nur ein technisches Detail ("Git ist nützlich"). Dies ist **DAS zentrale Lernziel** des Mentorings.
 
 **Erfolg bedeutet:**
 - Kind kann Problem reproduzierbar beschreiben

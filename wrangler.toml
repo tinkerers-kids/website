@@ -1,7 +1,7 @@
 # Cloudflare Workers - Static Assets
 # https://developers.cloudflare.com/workers/static-assets/
 
-name = "levins-coding-class"
+name = "tinkerers-kids"
 compatibility_date = "2025-01-25"
 
 [build]

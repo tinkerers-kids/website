@@ -4,11 +4,11 @@ sidebar_position: 2
 
 # Hardware-Entscheidung
 
-Die wichtigste Frage zuerst: **Welche Hardware soll dein Kind für den Kurs nutzen?**
+Die wichtigste Frage zuerst: **Welche Hardware soll dein Kind für das Mentoring nutzen?**
 
 ## Die Ausgangssituation
 
-Es ist völlig verständlich, dass du nicht sofort mehrere hundert Euro für Hardware ausgeben möchtest, wenn du noch nicht weißt, ob dein Kind langfristig am Kurs teilnehmen wird. Vielleicht möchte dein Kind den Kurs erst einmal ausprobieren, bevor ihr in dedizierte Hardware investiert.
+Es ist völlig verständlich, dass du nicht sofort mehrere hundert Euro für Hardware ausgeben möchtest, wenn du noch nicht weißt, ob dein Kind langfristig am Mentoring teilnehmen wird. Vielleicht möchte dein Kind das Mentoring erst einmal ausprobieren, bevor ihr in dedizierte Hardware investiert.
 
 ## Zwei Optionen
 
@@ -19,7 +19,7 @@ Du hast grundsätzlich zwei Möglichkeiten:
 **Was bedeutet das?**
 - Du kaufst einen Computer speziell für dein Kind (z.B. Raspberry Pi 500+)
 - Dieser Computer wird **nur von deinem Kind** genutzt
-- **Nur für Kurs-Arbeit** (nicht für Spiele, Social Media, etc.)
+- **Nur für Mentoring-Arbeit** (nicht für Spiele, Social Media, etc.)
 - Ich bekomme **vollständigen Administrator-Zugriff** auf dieses Gerät
 - Das Gerät läuft mit **Linux** (keine privaten Daten vorhanden)
 
@@ -38,7 +38,7 @@ Du hast grundsätzlich zwei Möglichkeiten:
 - **[Raspberry Pi 500+](https://www.raspberrypi.com/products/raspberry-pi-500-plus/)** (~200 EUR)
   - Komplett-System mit 256GB NVMe und 16GB RAM
   - Linux vorinstalliert
-  - Vollständig ausreichend für alle Kursinhalte
+  - Vollständig ausreichend für alle Mentoringinhalte
 - **Monitor** (falls nicht vorhanden, ~100 EUR)
 - **Maus** (falls nicht vorhanden, ~10 EUR)
 
@@ -60,7 +60,7 @@ Du hast grundsätzlich zwei Möglichkeiten:
 - Ich helfe beim Einrichten des Servers
 
 :::info Diese Option ist Pflicht, wenn:
-- Ihr nur einen **Windows-Computer** habt (Windows ist im Kurs nicht zugelassen)
+- Ihr nur einen **Windows-Computer** habt (Windows ist im Mentoring nicht zugelassen)
 - Der Computer **von mehreren Personen genutzt wird** (Geschwister, Eltern)
 - Ihr **kein dediziertes Gerät nur für euer Kind** bereitstellen könnt
 :::
@@ -85,10 +85,10 @@ Du hast grundsätzlich zwei Möglichkeiten:
 3. Dein Kind verbindet sich über **Remote Desktop Protocol (RDP)**
 4. Dein Kind sieht einen vollständigen Desktop, arbeitet dort
 5. Für Support greife **nur ich** über VNC auf denselben Desktop zu – dein Kind nutzt weiterhin nur RDP
-6. Die Server-Konfiguration ist automatisiert ([Details hier](https://github.com/levins-coding-class/cloud-config))
+6. Die Server-Konfiguration ist automatisiert ([Details hier](https://github.com/tinkerers-kids/cloud-config))
 
 :::tip Wann diese Option wählen?
-- Du möchtest den Kurs erst ausprobieren
+- Du möchtest das Mentoring erst ausprobieren
 - Keine Anfangsinvestition gewünscht
 - Ihr habt bereits einen Computer, den dein Kind nutzen kann
 - Stabile Internetverbindung vorhanden
@@ -116,7 +116,7 @@ Du hast grundsätzlich zwei Möglichkeiten:
 
 **Langfristig:** Wenn dein Kind dabei bleibt, spricht einiges für **dedizierte Hardware**:
 - **Keine Latenz:** Lokale Arbeit fühlt sich direkter und flüssiger an
-- **Deine Daten bleiben bei dir:** Keine Kurs-Daten auf fremden Servern
+- **Deine Daten bleiben bei dir:** Keine Mentoring-Daten auf fremden Servern
 - **Euer Rechner bleibt frei:** Irgendwann nervt es, wenn das Kind ständig am Eltern-Computer sitzt
 
 Die Cloud-Lösung bleibt auch langfristig günstig (~84 EUR/Jahr) – es geht also nicht primär ums Geld, sondern um Komfort und Unabhängigkeit.
@@ -154,7 +154,7 @@ Ich (Levin Keller) benötige **Fernzugriff und vollständigen Admin-Zugriff** au
 
 ### Bei dedizierter Hardware:
 - Ich habe vollen Zugriff auf das Gerät
-- Das Gerät **muss ausschließlich** für den Kurs genutzt werden
+- Das Gerät **muss ausschließlich** für das Mentoring genutzt werden
 - **Keine** privaten Daten auf diesem Gerät speichern
 - **Keine** Daten von Geschwistern, Eltern oder anderen Familienmitgliedern
 - Bei geteilten Familien-Computern: **Cloud-Lösung ist Pflicht**
@@ -163,7 +163,7 @@ Ich (Levin Keller) benötige **Fernzugriff und vollständigen Admin-Zugriff** au
 - Ich habe **keinen Zugriff** auf euren persönlichen Computer
 - Eure privaten Daten bleiben vollständig geschützt
 - Ich habe nur Zugriff auf den Cloud-Server
-- Der Cloud-Server enthält nur Kurs-Materialien
+- Der Cloud-Server enthält nur Mentoring-Materialien
 - **Perfekt für geteilte Computer oder Windows-Nutzer**
 
 ## Nächste Schritte
