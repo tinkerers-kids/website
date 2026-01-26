@@ -3,8 +3,8 @@ import type {Config} from '@docusaurus/types';
 import type * as Preset from '@docusaurus/preset-classic';
 
 const config: Config = {
-  title: 'Coding-Kurs für Kinder',
-  tagline: 'Lerne Programmieren mit modernen Tools und echten Projekten',
+  title: 'Tinker-Mentoring für Kinder',
+  tagline: 'Tinkern, Lernen, Wachsen – mit echten Tools und eigenen Projekten',
   favicon: 'img/favicon.ico',
 
   future: {
@@ -12,10 +12,10 @@ const config: Config = {
     experimental_faster: true,
   },
 
-  url: 'https://coding-class.levinkeller.de',
+  url: 'https://mentoring.kids.tinkerers.de',
   baseUrl: '/',
 
-  organizationName: 'levins-coding-class',
+  organizationName: 'tinkerers-kids',
   projectName: 'website',
 
   onBrokenLinks: 'throw',
@@ -52,7 +52,7 @@ const config: Config = {
         path: 'docs-parents',
         routeBasePath: 'eltern',
         sidebarPath: './sidebars-parents.ts',
-        editUrl: 'https://github.com/levins-coding-class/website/edit/main/',
+        editUrl: 'https://github.com/tinkerers-kids/website/edit/main/',
       },
     ],
     [
@@ -60,9 +60,9 @@ const config: Config = {
       {
         id: 'teachers',
         path: 'docs-teachers',
-        routeBasePath: 'lehrkraefte',
+        routeBasePath: 'mentoren',
         sidebarPath: './sidebars-teachers.ts',
-        editUrl: 'https://github.com/levins-coding-class/website/edit/main/',
+        editUrl: 'https://github.com/tinkerers-kids/website/edit/main/',
       },
     ],
     [
@@ -70,9 +70,9 @@ const config: Config = {
       {
         id: 'children',
         path: 'docs-children',
-        routeBasePath: 'schueler',
+        routeBasePath: 'mentees',
         sidebarPath: './sidebars-children.ts',
-        editUrl: 'https://github.com/levins-coding-class/website/edit/main/',
+        editUrl: 'https://github.com/tinkerers-kids/website/edit/main/',
       },
     ],
   ],
@@ -80,9 +80,9 @@ const config: Config = {
   themeConfig: {
     image: 'img/docusaurus-social-card.jpg',
     navbar: {
-      title: 'Coding-Kurs',
+      title: 'Tinker-Mentoring',
       logo: {
-        alt: 'Coding-Kurs Logo',
+        alt: 'Tinker-Mentoring Logo',
         src: 'img/logo.svg',
       },
       items: [
@@ -98,17 +98,17 @@ const config: Config = {
           sidebarId: 'teachersSidebar',
           docsPluginId: 'teachers',
           position: 'left',
-          label: 'Für Lehrkräfte',
+          label: 'Für Mentor:innen',
         },
         {
           type: 'docSidebar',
           sidebarId: 'childrenSidebar',
           docsPluginId: 'children',
           position: 'left',
-          label: 'Für Schüler:innen',
+          label: 'Für Mentees',
         },
         {
-          href: 'https://github.com/levins-coding-class/website',
+          href: 'https://github.com/tinkerers-kids/website',
           label: 'GitHub',
           position: 'right',
         },
@@ -125,12 +125,12 @@ const config: Config = {
               to: '/eltern/intro',
             },
             {
-              label: 'Für Lehrkräfte',
-              to: '/lehrkraefte/intro',
+              label: 'Für Mentor:innen',
+              to: '/mentoren/intro',
             },
             {
-              label: 'Für Schüler:innen',
-              to: '/schueler/intro',
+              label: 'Für Mentees',
+              to: '/mentees/intro',
             },
           ],
         },
@@ -139,15 +139,15 @@ const config: Config = {
           items: [
             {
               label: 'GitHub Repository',
-              href: 'https://github.com/levins-coding-class/website',
+              href: 'https://github.com/tinkerers-kids/website',
             },
             {
               label: 'GitHub Issues',
-              href: 'https://github.com/levins-coding-class/website/issues',
+              href: 'https://github.com/tinkerers-kids/website/issues',
             },
             {
               label: 'GitHub Discussions',
-              href: 'https://github.com/levins-coding-class/website/discussions',
+              href: 'https://github.com/tinkerers-kids/website/discussions',
             },
           ],
         },

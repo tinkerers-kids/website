@@ -1,41 +1,50 @@
-# Willkommen beim Coding-Kurs für Kinder! 👋
+# Willkommen beim Tinker-Mentoring!
 
-Herzlich willkommen beim **Coding-Kurs für Kinder**! Hier lernen Kinder **richtige Programmierung** mit den gleichen Tools, die echte Entwickler täglich verwenden.
+Herzlich willkommen beim **Tinker-Mentoring für Kinder**! Hier lernen Kinder **selbstständig zu tinkern** – mit echten Tools, die professionelle Entwickler täglich verwenden.
 
-## 🎯 Für wen ist diese Website?
+## Was ist Tinkern?
+
+**Tinkern** bedeutet, neugierig auszuprobieren, zu experimentieren und eigene Projekte zu verfolgen. Kein starrer Lehrplan, keine vorgeschriebenen Aufgaben – jedes Kind arbeitet an dem, was es interessiert.
+
+## Für wen ist diese Website?
 
 Diese Website bietet Informationen für drei Zielgruppen:
 
-### 👨‍👩‍👧‍👦 [Für Eltern](/eltern/intro)
+### [Für Eltern](/eltern/intro)
 
-Du überlegst, dein Kind an diesem Kurs teilnehmen zu lassen? Hier findest du:
-- Informationen zum Kursformat und Ablauf
+Du überlegst, dein Kind beim Tinker-Mentoring anzumelden? Hier findest du:
+- Informationen zum Mentoring-Konzept
 - Hardware-Optionen (eigene Hardware oder Cloud-Lösung)
-- Lerninhalte und pädagogischer Ansatz
+- Mögliche Themen und Projekte
 - Antworten auf häufig gestellte Fragen
 
-**[→ Zur Eltern-Dokumentation](/eltern/intro)**
+**[Zur Eltern-Dokumentation](/eltern/intro)**
 
-### 👨‍🏫 [Für Lehrkräfte](/lehrkraefte/intro)
+### [Für Mentor:innen](/mentoren/intro)
 
-Du möchtest einen ähnlichen Kurs aufsetzen? Hier erfährst du:
-- Das Kernkonzept: Reproduzierbare Problemkommunikation
+Du möchtest selbst als Mentor:in aktiv werden (als Lehrkraft, Elternteil oder einfach so)? Hier erfährst du:
+- Das Kernkonzept: Selbstständigkeit durch Tinkern
 - Warum Git, Typst und keine Microsoft Office Produkte?
 - Praktische Umsetzung und häufige Fehler
 - Pädagogische Prinzipien
 
-**[→ Zur Lehrkräfte-Dokumentation](/lehrkraefte/intro)**
+**[Zur Mentor:innen-Dokumentation](/mentoren/intro)**
 
-### 👧👦 [Für Schüler:innen](/schueler/intro)
+### [Für Mentees](/mentees/intro)
 
-Du nimmst am Kurs teil oder möchtest starten? Hier findest du:
-- Was du für den Kurs brauchst
+Du bist dabei oder möchtest starten? Hier findest du:
+- Was du brauchst
 - Wie du loslegst
 - Wie du Hilfe bekommst
 
-**[→ Zur Schüler-Dokumentation](/schueler/intro)**
+**[Zur Mentees-Dokumentation](/mentees/intro)**
 
-## 💡 Was macht diesen Kurs besonders?
+## Was macht dieses Mentoring besonders?
+
+### Selbstständigkeit im Fokus
+- **Du** entscheidest, was du lernen willst
+- Kein fester Lehrplan, keine Deadlines
+- Unterstützung, wenn du sie brauchst
 
 ### Echte Tools, echte Skills
 - Keine "Spielzeug-Tools" wie Scratch
@@ -47,22 +56,17 @@ Du nimmst am Kurs teil oder möchtest starten? Hier findest du:
 - Baue Websites mit echter URL
 - Zeige deine Arbeit Freunden und Familie
 
-### Individuelles Tempo
-- Kein Zeitdruck
-- Jedes Kind lernt in seinem eigenen Tempo
-- Asynchroner Kurs mit persönlicher Betreuung
-
-## 📞 Kontakt & Community
+## Kontakt & Community
 
 ### GitHub-Organisation
-Alle Kursaktivitäten finden in der [GitHub-Organisation "levins-coding-class"](https://github.com/orgs/levins-coding-class) statt.
+Alle Mentoring-Aktivitäten finden in der [GitHub-Organisation "tinkerers-kids"](https://github.com/orgs/tinkerers-kids) statt.
 
 ### Öffentliches Diskussionsforum
-Für Fragen und Austausch gibt es ein [öffentliches Diskussionsforum](https://github.com/levins-coding-class/website/discussions).
+Für Fragen und Austausch gibt es ein [öffentliches Diskussionsforum](https://github.com/tinkerers-kids/website/discussions).
 
-## 🎓 Kostenlos
+## Kostenlos
 
-Der Kurs ist **komplett kostenlos**. Es fallen keine Kursgebühren an.
+Das Mentoring ist **komplett kostenlos**. Es fallen keine Gebühren an.
 
 Die einzigen Kosten sind:
 - Hardware (Option A: ~200-300 EUR einmalig)
@@ -70,4 +74,4 @@ Die einzigen Kosten sind:
 
 ---
 
-**Bereit loszulegen? Wähle deine Zielgruppe oben und erfahre mehr!** 🚀
+**Bereit loszulegen? Wähle deine Zielgruppe oben und erfahre mehr!**

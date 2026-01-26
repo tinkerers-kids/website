@@ -4,21 +4,26 @@ sidebar_position: 1
 
 # Informationen für Eltern
 
-Willkommen beim Coding-Kurs für Kinder! Diese Dokumentation enthält alle wichtigen Informationen zum Kursformat, den Lerninhalten und den technischen Voraussetzungen.
+Willkommen beim Tinker-Mentoring für Kinder! Diese Dokumentation enthält alle wichtigen Informationen zum Mentoring-Konzept, den möglichen Themen und den technischen Voraussetzungen.
 
-## Kursüberblick
+## Was ist Tinker-Mentoring?
 
-Dieser **kostenlose** Kurs vermittelt Kindern die Grundlagen der Softwareentwicklung auf eine praktische und altersgerechte Weise. Der Fokus liegt auf modernen Entwicklungswerkzeugen und -methoden, die auch in der professionellen Softwareentwicklung verwendet werden.
+**Tinkern** bedeutet neugierig auszuprobieren, zu experimentieren und eigene Projekte zu verfolgen. Dieses **kostenlose** Mentoring-Programm unterstützt Kinder dabei, selbstständig mit echten Entwickler-Tools zu arbeiten. Es gibt keinen festen Lehrplan – jedes Kind arbeitet an dem, was es interessiert.
 
-## Für wen ist dieser Kurs?
+Der Fokus liegt auf:
+- **Selbstständigkeit** – Kinder lernen, eigene Probleme zu lösen
+- **Echte Tools** – Git, VS Code, Typst und mehr
+- **Unterstützung bei Bedarf** – Ich helfe, wenn sie nicht weiterkommen
 
-Dieser Kurs richtet sich **vorrangig an Kinder, deren Eltern mich persönlich kennen**. Dazu gehören zum Beispiel:
+## Für wen ist dieses Mentoring?
+
+Dieses Mentoring richtet sich **vorrangig an Kinder, deren Eltern mich persönlich kennen**. Dazu gehören zum Beispiel:
 
 - Klassenkamerad:innen meiner eigenen Kinder
 - Kinder von Eltern aus meinem persönlichen Umfeld (z.B. aus dem Dorf, in dem ich wohne)
 - Kinder von Freund:innen und Bekannten
 
-Der Kurs ist bewusst als **persönliches Angebot** konzipiert und basiert auf Vertrauen und direktem Kontakt. Dies ermöglicht eine enge Betreuung und individuelle Unterstützung.
+Das Mentoring ist bewusst als **persönliches Angebot** konzipiert und basiert auf Vertrauen und direktem Kontakt. Dies ermöglicht eine enge Betreuung und individuelle Unterstützung.
 
 ## Warum nicht Scratch, Blockly oder ähnliche visuelle Tools?
 
@@ -37,13 +42,13 @@ In diesem Bereich findest du:
 
 - **[Hardware-Entscheidung](/eltern/hardware-entscheidung)** - Eigene Hardware kaufen oder Cloud-Lösung nutzen?
 - **[Hardware-Anforderungen](/eltern/hardware-anforderungen)** - Welche Hardware wird benötigt?
-- **[Kursformat](/eltern/kursformat)** - Wie läuft der Kurs ab?
-- **[Lerninhalte](/eltern/lerninhalte)** - Was lernt dein Kind?
+- **[Das Mentoring-Programm](/eltern/kursformat)** - Wie läuft das Mentoring ab?
+- **[Mögliche Themen](/eltern/lerninhalte)** - Woran könnte dein Kind arbeiten?
 - **[FAQ](/eltern/faq)** - Häufig gestellte Fragen
 
 ## Kosten
 
-Der Kurs ist **komplett kostenlos**. Es fallen keine Kursgebühren an.
+Das Mentoring ist **komplett kostenlos**. Es fallen keine Gebühren an.
 
 Die einzigen Kosten sind:
 - Hardware (entweder einmalig oder monatliche Cloud-Kosten)

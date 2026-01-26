@@ -207,7 +207,7 @@ git push
 - Verantwortung für eigene Beiträge
 - Wie echte Teams arbeiten
 
-## Alternativen zu Microsoft Office im Kurs
+## Alternativen zu Microsoft Office im Mentoring
 
 ### Statt Word → Typst / Markdown
 

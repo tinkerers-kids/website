@@ -14,7 +14,7 @@ Du brauchst einen Computer mit:
 - **Internetverbindung**
 
 :::warning Tablets funktionieren nicht!
-❌ iPads, Android-Tablets oder Smartphones sind **nicht geeignet** für diesen Kurs.
+❌ iPads, Android-Tablets oder Smartphones sind **nicht geeignet** fürs Mentoring.
 
 Programmieren braucht:
 - Schnelles Tippen mit beiden Händen
@@ -29,7 +29,7 @@ Deine Eltern haben eine von zwei Möglichkeiten gewählt:
 
 **Option A: Eigener Computer für dich**
 - Zum Beispiel ein Raspberry Pi 500+
-- Nur für den Kurs
+- Nur fürs Tinkern
 - Gehört dir!
 
 **Option B: Computer der Eltern + Cloud**
@@ -106,4 +106,4 @@ Nach dem Onboarding kannst du loslegen!
 3. ✅ Onboarding-Termin mit deinen Eltern vereinbaren
 4. ✅ Loslegen!
 
-Wenn du Fragen hast, schau bei [Hilfe bekommen](/schueler/hilfe).
+Wenn du Fragen hast, schau bei [Hilfe bekommen](/mentees/hilfe).
