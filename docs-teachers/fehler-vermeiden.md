@@ -4,7 +4,7 @@ sidebar_position: 9
 
 # Gängige Fehler vermeiden
 
-Diese Fehler können das Mentoring-Erfolg massiv gefährden. Lerne aus unseren Erfahrungen:
+Diese Fehler können den Mentoring-Erfolg massiv gefährden. Lerne aus unseren Erfahrungen:
 
 ## ❌ FEHLER #1: Windows-Computer zulassen
 
