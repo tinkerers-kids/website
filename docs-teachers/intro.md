@@ -26,6 +26,7 @@ Als Mentor:in unterstützt du Kinder dabei, **selbstständig zu tinkern** – al
 6. **Praktische Umsetzung** - Wie setze ich das konkret um?
 7. **Gängige Fehler vermeiden** - Kritische Punkte, die das Mentoring scheitern lassen können
 8. **Pädagogische Prinzipien** - Die Grundwerte des Mentorings
+9. **[Entwicklungsinfrastruktur](/mentoren/dev-infrastruktur)** - Technisches Setup der Mentee-Umgebungen
 
 **Wenn du nur wenig Zeit hast, lies mindestens:**
 - Abschnitt 2: "Der entscheidende Punkt" (der Kern von allem)
