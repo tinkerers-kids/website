@@ -1,292 +1,240 @@
 ---
+
 sidebar_position: 10
+
+title: Entwicklungsinfrastruktur
+
 ---
 
-# Entwicklungsinfrastruktur
+## Zielsetzung
 
-Diese Seite dokumentiert das technische Setup der Entwicklungsumgebungen für die Mentees. Das Setup ist darauf ausgelegt, Kindern eine sichere, abgeschirmte Arbeitsumgebung zu bieten.
+Die Infrastruktur verfolgt drei zentrale Ziele:
+
+1. **Reduktion unnötiger Angriffsflächen** (kein unnötig offener Zugriff aus dem Internet)
+2. **Minimierung von Versuchungen und Ablenkungen** für Mentees
+3. **Gute Wart- und Unterstützbarkeit** für Mentor:innen
+
+Absolute Sicherheit ist weder möglich noch Ziel dieser Architektur. Es handelt sich um ein bewusst gestaltetes **Best‑Effort‑Setup**, das Risiken reduziert, ohne falsche Sicherheitsannahmen zu erzeugen.
+
+Wichtig ist dabei: Diese Seite soll **nicht belehren**, ob ein Setup „sicher genug“ ist. Sie versteht Infrastruktur als **Gestaltungswerkzeug**. Ziel ist es, Mentor:innen aufzuzeigen, welche Räume sich zwischen völliger Abschottung und ungefiltertem Internet eröffnen – und wie diese bewusst gestaltet werden können.
+
+---
 
 ## Architekturübersicht
 
 ```mermaid
 flowchart TB
     subgraph Internet["Internet"]
-        hetzner["Hetzner VPS<br/>(Cloud Dev Server)"]
-        adguard_vps["AdGuard VPS<br/>100.64.0.7"]
+        matrix_server["Matrix Chat‑Server<br/>Chat · Video · Screen‑Sharing"]
     end
 
     subgraph Tailscale["Tailscale Mesh Network"]
-        adguard["AdGuard Home<br/>(DNS + Filtering)"]
-        mentor["Mentor-Gerät<br/>(VNC + SSH Zugang)"]
-
-        subgraph Mentees["Mentee-Geräte"]
-            minipc["Mini-PCs"]
-            raspi["Raspberry Pis"]
-            cloud["Cloud-Server"]
-        end
+        mentor["Mentor‑Gerät<br/>VNC + SSH"]
+        adguard["AdGuard Home<br/>DNS‑Filter"]
+        mentee["Mentee‑Gerät<br/>(Beispiel: Mini‑PC · Raspberry Pi · Cloud‑Server)"]
     end
 
-    subgraph Matrix["Matrix Federation"]
-        matrix_server["kids.tinkerers.de<br/>(Federation: disabled)"]
-    end
-
-    hetzner --> cloud
-    adguard_vps --> adguard
-
-    Mentees -->|"DNS: 100.64.0.7"| adguard
-    mentor -->|"VNC/SSH"| Mentees
-    Mentees <-->|"Element"| matrix_server
-    mentor <-->|"Element"| matrix_server
-
-    style adguard fill:#90EE90
-    style matrix_server fill:#87CEEB
-    style mentor fill:#FFD700
+    mentor -->|VNC / SSH| mentee
+    mentee -->|DNS| adguard
+    mentee <-->|Matrix Client| matrix_server
+    mentor <-->|Matrix Client| matrix_server
 ```
 
-## Komponenten im Detail
+:::note Darstellung
+Im Fokus steht jeweils **ein Mentee‑Gerät**. Ob es sich dabei um einen Mini‑PC, einen Raspberry Pi oder einen Cloud‑Server handelt, ist für die Architektur nachrangig. Entscheidend ist, dass dieses Gerät Teil des Tailscale‑Mesh‑Netzwerks ist.
 
-### Tailscale Mesh Network
-
-Alle Geräte sind Teil eines privaten Tailscale-Netzwerks. Das ermöglicht:
-
-- **Privates Netzwerk ohne Port-Forwarding** – Geräte sind nicht öffentlich erreichbar
-- **Ende-zu-Ende-Verschlüsselung** – WireGuard-basiert
-- **NAT-Traversal** – Funktioniert auch hinter restriktiven Firewalls
-- **ACLs** – Zugriffsregeln definieren, wer mit wem kommunizieren darf
-
-#### ACL-Konfiguration
-
-Die Kinder brauchen in der Regel keinen Zugriff untereinander. Eine typische ACL-Struktur:
-
-```json
-{
-  "acls": [
-    {
-      "action": "accept",
-      "src": ["tag:mentor"],
-      "dst": ["tag:mentee:*"]
-    },
-    {
-      "action": "accept",
-      "src": ["tag:mentee"],
-      "dst": ["tag:adguard:53"]
-    }
-  ]
-}
-```
-
-:::note Flexibilität
-Falls für bestimmte Projekte Peer-to-Peer-Zugriff zwischen Mentees sinnvoll ist (z.B. gemeinsame Entwicklung), lässt sich das über die ACLs temporär freischalten.
+AdGuard Home läuft ebenfalls innerhalb dieses Netzes. Er muss nicht auf dedizierter Hardware betrieben werden, sondern auf irgendeinem System, das im Tailscale‑Netzwerk erreichbar ist und ausschließlich dort DNS‑Anfragen entgegennimmt.
 :::
 
-### AdGuard Home
+---
 
-AdGuard Home läuft auf einem dedizierten VPS im Tailscale-Netzwerk und dient als DNS-Server für alle Mentee-Geräte.
+## Zentrale Komponenten
 
-**Konfiguration auf den Mentee-Geräten:**
-```bash
-# /etc/resolv.conf oder via systemd-resolved
-nameserver 100.64.0.7
-```
+### Tailscale
 
-**Blockierte Kategorien:**
-- Malware und Phishing
-- Tracking und Werbung
-- Nachrichtenseiten (verstörende Inhalte über Gewalt/Krieg)
-- Nicht kindgerechte Inhalte
+Tailscale wird **nicht** als Schutz vor Inhalten verstanden, sondern ausschließlich als Werkzeug zur **Zugriffskontrolle und Administration**:
 
-**SSL-Zertifikate:** AdGuard läuft mit gültigen SSL-Zertifikaten für DNS-over-HTTPS/TLS.
+* kein Port‑Forwarding
+* keine öffentlichen Management‑Interfaces
+* gezielter administrativer Zugriff auf Mentee‑Systeme
 
-```mermaid
-sequenceDiagram
-    participant M as Mentee-Gerät
-    participant A as AdGuard (100.64.0.7)
-    participant I as Internet
+Typische Einsatzfälle:
 
-    M->>A: DNS-Anfrage: beispiel.de
-    A->>A: Prüfe Blocklisten
-    alt Erlaubt
-        A->>I: DNS-Anfrage weiterleiten
-        I-->>A: IP-Adresse
-        A-->>M: IP-Adresse
-    else Blockiert
-        A-->>M: Blockiert (0.0.0.0)
-    end
-```
+* SSH‑Zugriff durch Mentor:innen
+* VNC/Remote‑Support
+* Absicherung von Cloud‑Systemen gegen direkten Internetzugriff
 
-### VNC + SSH Zugang
+---
 
-Auf jedem Mentee-Gerät läuft ein VNC-Server, der nur über die Tailscale-IP erreichbar ist:
+### DNS‑Filtering (AdGuard Home)
 
-- **Zweck:** Remote-Support und Troubleshooting
-- **Zugang:** Nur über Tailscale, nicht aus dem offenen Internet
-- **Zusätzlich:** Root-Account und SSH-Zugang auf allen Geräten
+AdGuard Home fungiert als zentraler DNS‑Resolver für alle Mentee‑Systeme.
 
-```bash
-# Beispiel: Verbindung zu einem Mentee-Gerät
-ssh root@100.64.0.X
-# oder
-vncviewer 100.64.0.X:5900
-```
+* Filterung problematischer Domains
+* Blockieren von Nachrichtenseiten
+* Sperrung sozialer Netzwerke und Plattformen (z. B. Facebook, Reddit u. a.)
+* Ausblenden bekannter Tracking‑ und Malware‑Domains
 
-### Matrix-Server (kids.tinkerers.de)
+Wichtig: **Der Internetzugang bleibt grundsätzlich offen.**
+Blockiert wird ausschließlich auf DNS‑Ebene.
 
-Ein dedizierter Matrix-Server ohne Federation:
+:::info Warum kein öffentlicher DNS‑Dienst?
+AdGuard bietet öffentliche „Safe DNS“-Server an, die bereits grundlegende Schutzfunktionen bereitstellen. Diese sind jedoch **nicht ausreichend konfigurierbar**:
 
-```mermaid
-flowchart LR
-    subgraph kids.tinkerers.de
-        homeserver["Synapse Homeserver"]
+* Nachrichtenseiten lassen sich dort nicht gezielt sperren
+* zusätzliche Kategorien (soziale Netzwerke, Ablenkungsplattformen) können nicht differenziert gefiltert werden
+* projektspezifische Anpassungen sind nicht möglich
 
-        subgraph Räume["Chat-Räume"]
-            general["Allgemein"]
-            projekt1["Projekt-Räume"]
-            direkt["Direktnachrichten"]
-        end
-    end
-
-    subgraph Extern["Externe Matrix-Server"]
-        matrix_org["matrix.org"]
-        andere["andere Server"]
-    end
-
-    homeserver --> Räume
-    homeserver -.->|"Federation: OFF"| Extern
-
-    style matrix_org fill:#ffcccc
-    style andere fill:#ffcccc
-```
-
-**Warum keine Federation:**
-- Kinder können nur mit bekannten Personen kommunizieren
-- Keine Kontaktaufnahme durch Fremde möglich
-- Kein "Abdriften" in öffentliche Räume anderer Server
-
-**Account-Erstellung:**
-- Registrierungstoken-basiert
-- Accounts werden individuell erstellt
-- Kein Self-Service (bewusste Entscheidung)
-
-**Features:**
-- Gruppenchats
-- Direktnachrichten
-- Videotelefonie
-- Bildschirmfreigabe (Screen Sharing)
-
-## Hardware-Varianten
-
-### Mini-PCs
-
-Physische Geräte, die bei den Mentees zu Hause stehen:
-- Manuelle Ersteinrichtung
-- Tailscale-Client installiert
-- VNC-Server konfiguriert
-
-### Raspberry Pi
-
-Kostengünstige Alternative:
-- Gleiches Setup wie Mini-PCs
-- Etwas weniger Leistung, aber für die meisten Projekte ausreichend
-
-### Cloud-Server (Hetzner VPS)
-
-Für Mentees ohne eigene Hardware oder mit unzuverlässiger Internetverbindung:
-
-```mermaid
-flowchart LR
-    mentee["Mentee<br/>(beliebiges Gerät)"]
-    vscode["VS Code<br/>Remote SSH"]
-    vps["Hetzner VPS<br/>(im Tailscale-Netz)"]
-
-    mentee --> vscode
-    vscode -->|"SSH über Tailscale"| vps
-```
-
-**Cloud-Init-Automatisierung:**
-
-Die Cloud-Server werden mit Cloud-Init-Skripten provisioniert:
-
-```yaml
-#cloud-config
-packages:
-  - git
-  - vim
-  - build-essential
-
-runcmd:
-  - # Tailscale-Setup (derzeit manuell)
-  - # VNC-Server-Setup
-```
-
-:::tip Automatisierung
-Das Tailscale-Setup erfolgt derzeit manuell. Eine Automatisierung über Cloud-Init mit Auth-Keys ist geplant:
-```bash
-curl -fsSL https://tailscale.com/install.sh | sh
-tailscale up --authkey=tskey-auth-xxx
-```
+Für die Mentoring‑Umgebung ist eine **feingranulare, anpassbare Filterung** erforderlich. Deshalb wird ein eigener AdGuard‑Home‑Server betrieben.
 :::
 
-## Sicherheitskonzept
+:::note Warum AdGuard nicht öffentlich betrieben wird (Port 53)
+In Rechenzentren ist der Betrieb öffentlicher DNS‑Server auf Port 53 häufig untersagt oder stark eingeschränkt. Offene DNS‑Resolver stellen ein erhebliches Missbrauchs‑ und DDoS‑Risiko dar und werden daher von vielen Providern blockiert oder reglementiert.
 
-```mermaid
-flowchart TB
-    subgraph Schichten["Sicherheitsschichten"]
-        l1["1. Netzwerkebene<br/>Tailscale (privates Netz, ACLs)"]
-        l2["2. DNS-Ebene<br/>AdGuard (Content Filtering)"]
-        l3["3. Kommunikationsebene<br/>Matrix ohne Federation"]
-        l4["4. Zugangsebene<br/>VNC/SSH nur für Mentor"]
-    end
+AdGuard Home wird deshalb **nicht öffentlich exponiert**, sondern ausschließlich innerhalb des Tailscale‑Mesh‑Netzwerks betrieben. So ist der Dienst nur für berechtigte Systeme erreichbar und nicht Teil der offenen DNS‑Infrastruktur des Internets.
 
-    l1 --> l2 --> l3 --> l4
+Diese Entscheidung passt zudem gut zur Gesamtarchitektur, da alle Mentee‑Geräte ohnehin Teil des Tailscale‑Netzwerks sind.
+:::
 
-    style l1 fill:#90EE90
-    style l2 fill:#90EE90
-    style l3 fill:#90EE90
-    style l4 fill:#90EE90
-```
+---
 
-| Bedrohung | Schutzmaßnahme |
-|-----------|----------------|
-| Direkter Angriff aus dem Internet | Tailscale (keine öffentliche IP) |
-| Schädliche Webseiten | AdGuard Blocklisten |
-| Ungeeignete Inhalte | AdGuard Content Filter |
-| Kontakt mit Fremden | Matrix ohne Federation |
-| Technische Probleme | VNC/SSH Remote-Zugang |
+### Benutzer‑ und Systemrechte
 
-## Updates und Wartung
+Mentees arbeiten ohne Administrator‑Rechte:
 
-**Automatische Updates:**
-- `unattended-upgrades` auf allen Linux-Systemen
-- Sicherheitsupdates werden automatisch installiert
+* keine Installation eigener Software
+* keine Änderung von Netzwerk‑ oder Sicherheitseinstellungen
+* reduzierte Möglichkeit zur Umgehung von Schutzmaßnahmen
 
-**Manuelle Eingriffe:**
-- Bei Bedarf über SSH/VNC
-- Größere Upgrades nach Absprache
+Diese Ebene dient primär der Stabilität und der Reduktion unbeabsichtigter Grenzüberschreitungen.
 
-## Einrichtung neuer Geräte
+---
 
-### Checkliste
+### Kommunikation (Matrix)
 
-1. **Betriebssystem installieren** (Linux)
-2. **Tailscale installieren und einrichten**
-   ```bash
-   curl -fsSL https://tailscale.com/install.sh | sh
-   tailscale up
-   ```
-3. **DNS auf AdGuard setzen** (100.64.0.7)
-4. **VNC-Server installieren und konfigurieren**
-5. **SSH-Zugang einrichten** (Root-Account)
-6. **Element installieren** und Account auf kids.tinkerers.de erstellen
-7. **Entwicklungstools installieren** (VS Code, Git, etc.)
+Die Kommunikation erfolgt über einen eigenen Matrix‑Chat‑Server mit:
 
-### Cloud-Server (Hetzner)
+* Gruppen‑Chats
+* Direktnachrichten
+* Videotelefonie
+* Bildschirmfreigabe
 
-1. **VPS erstellen** mit Cloud-Init-Skript
-2. **Tailscale manuell einrichten** (Auth-Key)
-3. **Rest wie oben**
+Der Server ist aus dem Internet erreichbar, der Zugriff jedoch **authentifiziert und zugangsbeschränkt**. Er dient ausschließlich der Kommunikation im Mentoring‑Kontext und ist kein öffentlicher Chat‑Dienst.
 
-## Weiterführende Ressourcen
+---
 
-- [Tailscale Documentation](https://tailscale.com/kb/)
-- [AdGuard Home Wiki](https://github.com/AdguardTeam/AdGuardHome/wiki)
-- [Matrix Synapse Admin Guide](https://element-hq.github.io/synapse/latest/)
+## Cloud‑Systeme vs. Heimgeräte
+
+Cloud‑Server unterscheiden sich technisch grundlegend von Heimcomputern:
+
+* sie sind initial aus dem Internet erreichbar
+* sie benötigen besondere Absicherung
+
+Durch die Einbindung in Tailscale wird der Cloud‑Server:
+
+* für das offene Internet unsichtbar
+* ausschließlich über das private Netz administrierbar
+
+Remote‑Zugriffe erfolgen – abhängig vom Kontext – entweder:
+
+* über das VPN (bevorzugt)
+* oder über abgesicherte Protokolle mit starken Passwörtern
+
+---
+
+## Remote‑Zugriff
+
+Typische Werkzeuge:
+
+* SSH (Administration)
+* VNC (Support)
+* VS Code Remote SSH
+
+Grundsätze:
+
+* kein direkter Root‑Zugriff für Mentees
+* starke Passwörter / Keys
+* Änderungen nachvollziehbar
+
+---
+
+## Automatisierung & Wartung
+
+* automatische Sicherheitsupdates
+* manuelle Updates bei größeren Änderungen
+* Cloud‑Init für Basis‑Provisionierung
+
+Vollautomatisierung ist **ein erklärtes Ziel**, aber technisch anspruchsvoll und derzeit nur teilweise umgesetzt.
+
+:::note Stand der Automatisierung (Tailscale & Cloud‑Zugriff)
+Die vollständige Automatisierung des Tailscale‑Beitritts ist aktuell noch nicht zufriedenstellend gelöst.
+
+Insbesondere bei Cloud‑Systemen ergibt sich eine praktische Herausforderung:
+
+* Um ein Cloud‑System sicher zu betreiben, sollte es **zunächst** Teil des Tailscale‑Netzwerks werden.
+* Um Tailscale beitreten zu können, benötigen Nutzer:innen jedoch bereits **Zugriff auf das System**.
+
+Dieser Henne‑Ei‑Effekt ist für technisch unerfahrene Nutzer:innen schwer aufzulösen. In der Praxis überfordert es viele, zunächst ein VPN einzurichten und erst danach eine Remote‑Desktop‑Verbindung aufzubauen.
+
+Daher wird aktuell häufig ein pragmatischer Mittelweg gewählt:
+
+* Der Remote‑Desktop‑Dienst (z. B. RDP/VNC) ist initial **nach außen erreichbar**.
+* Der Zugriff wird durch **sehr starke Passwörter** abgesichert.
+* Nach erfolgreichem Onboarding und Tailscale‑Beitritt kann dieser Zugriff weiter eingeschränkt oder ganz geschlossen werden.
+
+Diese Lösung ist nicht ideal, aber realistisch und handhabbar. Sie stellt einen bewussten Kompromiss zwischen Sicherheit, Nutzbarkeit und organisatorischem Aufwand dar.
+:::
+
+---
+
+## Gestaltung statt Belehrung
+
+In der Praxis erleben viele Kinder digitale Umgebungen entweder als stark eingeschränkt (kein Internet, reine Übungsaufgaben) oder als vollständig unkontrolliert („freies Internet, lerne schwimmen“).
+
+Diese Infrastruktur zeigt einen **dritten Weg**:
+
+* Internetzugang ist vorhanden
+* aber bewusst strukturiert
+* mit klar gestalteten Kommunikations‑ und Arbeitsräumen
+
+Mentor:innen übernehmen hier eine **gestaltende Rolle**. Sie entscheiden nicht nur *ob* Kinder Zugang zum Internet haben, sondern *wie* dieser Zugang aussieht.
+
+Das betrifft sowohl Inhalte als auch Kommunikation.
+
+### Inhalte als gestaltbarer Raum
+
+Nicht jede Plattform stellt für Kinder das gleiche Risiko dar. Während Dienste wie soziale Netzwerke oder Video‑Plattformen stark auf Aufmerksamkeit, Empfehlung und Eskalation ausgelegt sind, existieren andere Angebote, die funktional, zielgerichtet und arbeitsbezogen sind.
+
+Beispiel:
+
+* **GitHub** ist in dieser Umgebung grundsätzlich erlaubt, da es für die Arbeit notwendig ist und kein typisches „Abdriften“ begünstigt.
+* Gleichzeitig bleibt es eine bewusste Entscheidung. Denkbar wäre auch ein späterer Übergang zu einer eigenen GitLab‑Instanz oder strengeren Einschränkungen.
+
+Entscheidend ist nicht die perfekte Liste erlaubter Seiten, sondern das **bewusste Abwägen**.
+
+### Kommunikation als gestaltbarer Raum
+
+Ähnliches gilt für persönliche Kommunikation. Gängige Messenger‑Dienste sind für Erwachsene konzipiert und setzen Telefonnummern, offene Kontaktstrukturen und externe Reichweite voraus.
+
+Für Kinder entstehen dadurch unnötige Risiken.
+
+Durch eine eigene Kommunikationsinfrastruktur (z. B. Matrix) lassen sich Alternativen schaffen:
+
+* Kommunikation nur mit bekannten Personen
+* klare Zugehörigkeit (z. B. Schul‑ oder Projektkontext)
+* keine externen Kontaktaufnahmen
+
+So entstehen Kommunikationsräume, die **Austausch ermöglichen**, ohne Kinder ungeschützt in erwachsene Plattform‑Ökosysteme zu schicken.
+
+Diese Seite soll Mentor:innen ermutigen, Infrastruktur nicht als gegeben hinzunehmen, sondern als **pädagogisches Gestaltungsmittel** zu verstehen.
+
+---
+
+## Sicherheitsverständnis und Grenzen
+
+Diese Infrastruktur ist:
+
+* kein Hochsicherheits‑System
+* kein Ersatz für pädagogische Begleitung
+
+Sie ist ein **technisch sauberer, wartbarer Rahmen**, der Mentoring ermöglicht, ohne unnötige Risiken zu erzeugen.

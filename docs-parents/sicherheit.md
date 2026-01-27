@@ -1,142 +1,217 @@
 ---
-sidebar_position: 7
+
+sidebar_position: 5.5
+
+title: Arbeitsumgebung
 ---
 
-# Sicherheit der Entwicklungsumgebung
+## Warum das Internet für Kinder nicht neutral ist
 
-Als Elternteil möchtest du wissen, dass dein Kind in einer sicheren Umgebung arbeitet. Diese Seite erklärt, wie die technische Infrastruktur aufgebaut ist und warum sie besonders sicher für Kinder ist.
+Das Internet ist eine der größten Wissens- und Lernressourcen unserer Zeit. Gleichzeitig ist es ein Raum, dessen Inhalte, Dynamiken und Anreizsysteme fast ausschließlich auf Erwachsene ausgelegt sind.
 
-## Das Grundprinzip: Eine geschützte Blase
+### 1. Ein zu großer, unstrukturierter Raum
 
-Die Entwicklungsumgebung deines Kindes ist bewusst vom "offenen Internet" abgeschirmt. Stell dir das wie einen geschützten Spielplatz vor: Dein Kind kann frei experimentieren und lernen, aber ungeeignete Inhalte und Kontakte von außen werden ferngehalten.
+Suchmaschinen, Verlinkungen und Empfehlungsmechanismen machen es leicht, von einem Thema zum nächsten abzudriften.
 
-```mermaid
-flowchart TB
-    subgraph Internet["Offenes Internet"]
-        bad["Schädliche Inhalte<br/>Nachrichten mit Gewalt<br/>Fragwürdige Kontakte"]
-    end
+Für Kinder bedeutet das:
 
-    subgraph Schutz["Geschützte Umgebung"]
-        adguard["AdGuard Schutzfilter"]
-        tailscale["Privates Netzwerk"]
-        matrix["Geschlossener Chat"]
-    end
+* fehlende Orientierung,
+* keine klare Trennung zwischen Lerninhalten und problematischen Inhalten,
+* schnelles Abgleiten in Inhalte, die emotional oder kognitiv nicht verarbeitet werden können.
 
-    subgraph Kind["Arbeitsplatz deines Kindes"]
-        dev["Entwicklungsumgebung"]
-    end
+Das Risiko liegt weniger in einzelnen Webseiten, sondern in der fehlenden Struktur und Begrenzung.
 
-    bad -.->|"blockiert"| adguard
-    adguard --> tailscale
-    tailscale --> dev
-    matrix --> dev
+---
 
-    style bad fill:#ffcccc
-    style adguard fill:#90EE90
-    style tailscale fill:#90EE90
-    style matrix fill:#90EE90
-    style dev fill:#87CEEB
-```
+### 2. Digitale Räume mit Erwachsenen-Dynamiken
 
-## Die drei Schutzebenen
+Viele verbreitete Plattformen (soziale Netzwerke, Messenger) sind für Erwachsene konzipiert. Sie setzen voraus, dass Nutzer:innen:
 
-### 1. Privates Netzwerk (Tailscale)
+* Fremde einschätzen können,
+* Grenzen setzen,
+* private Kommunikation reflektiert nutzen.
 
-Der Rechner deines Kindes ist Teil eines privaten Netzwerks, das vollständig von mir kontrolliert wird. Das bedeutet:
+Diese Voraussetzungen sind für Kinder strukturell nicht gegeben. Problematisch sind insbesondere:
 
-- **Kein direkter Zugang aus dem Internet** – Der Rechner ist nicht öffentlich erreichbar
-- **Nur autorisierte Geräte** – Nur Geräte, die ich explizit freigebe, können Teil des Netzwerks sein
-- **Verschlüsselte Verbindungen** – Alle Daten werden verschlüsselt übertragen
+* Direktnachrichten von Unbekannten,
+* private 1‑zu‑1‑Kommunikation ohne Einbettung,
+* Dynamiken wie Grooming, Manipulation oder Sextortion.
 
-### 2. Inhaltsfilter (AdGuard)
+Diese Risiken entstehen nicht durch Fehlverhalten einzelner Kinder, sondern durch das Design der Plattformen selbst.
 
-Der gesamte Internetverkehr läuft über einen Schutzfilter, der problematische Inhalte blockiert:
+---
 
-- **Schädliche Webseiten** – Malware, Phishing und andere Gefahren werden blockiert
-- **Ungeeignete Inhalte** – Seiten mit nicht kindgerechten Inhalten werden gefiltert
-- **Nachrichtenseiten** – Seiten mit verstörenden Meldungen über Gewalt, Krieg oder Katastrophen sind gesperrt
-- **Die meisten Seiten bleiben erreichbar** – Nur problematische Inhalte werden blockiert, nicht das Internet als Ganzes
+### 3. Permanente Konfrontation mit Krisen und Gewalt
 
-:::info Warum Nachrichtenseiten?
-Nachrichtenseiten zeigen oft brutale Bilder und Berichte über Gewalt, Krieg und Katastrophen. Das ist für Erwachsene belastend – für Kinder kann es verstörend sein. Im Mentoring geht es ums Programmieren, nicht um aktuelle Nachrichten.
+Nachrichtenportale und News‑Feeds konfrontieren Nutzer:innen permanent mit Gewalt, Krisen und Katastrophen.
+
+Bereits für Erwachsene ist diese Dauerbelastung problematisch.
+Kinder verfügen noch nicht über die nötige Distanz und Einordnungsmöglichkeiten, um solche Inhalte zu verarbeiten.
+
+Eine bewusste Begrenzung von Nachrichteninhalten ist daher kein Informationsentzug, sondern aktiver Schutz.
+
+---
+
+### 4. Lernen im Internet – und warum Begrenzung dazugehört
+
+Das Internet ist eine hervorragende Lernumgebung. Moderne Bildung bedeutet jedoch nicht, alle Inhalte jederzeit verfügbar zu machen, sondern Kinder zu befähigen:
+
+* selbstständig zu lernen,
+* Informationen einzuordnen,
+* digitale Werkzeuge sinnvoll zu nutzen.
+
+Diese Fähigkeiten lassen sich besser in einem begrenzten, begleiteten Rahmen erlernen, der Überforderung und unnötige Risiken reduziert.
+
+---
+
+## Grundprinzip: Einschränken statt Abschotten
+
+Die eingesetzten Geräte haben **vollen Internetzugang**.
+Sie befinden sich **nicht** in einem abgeschlossenen oder isolierten Netzwerk.
+
+Der Schutz entsteht dadurch, dass **bestimmte Teile des Internets bewusst unsichtbar gemacht werden**, nicht dadurch, dass das Internet insgesamt blockiert wird.
+
+Technisch geschieht dies vor allem durch:
+
+* Filter auf DNS‑Ebene
+* eingeschränkte Benutzer‑ und Systemrechte
+
+---
+
+## Die drei tatsächlichen Schutzebenen
+
+### 1. Eingeschränkte Benutzerrechte
+
+Kinder arbeiten **nicht mit Administrator‑Rechten**:
+
+* keine Änderung von System‑ oder Netzwerkeinstellungen,
+* keine Installation eigener Programme,
+* keine Umgehung der Filter durch einfache technische Mittel.
+
+Programme, Updates und Änderungen müssen bewusst freigegeben werden.
+
+Diese Ebene verhindert nicht alles, reduziert aber insbesondere unbeabsichtigte Grenzüberschreitungen erheblich.
+
+---
+
+### 2. Inhaltsfilter (DNS‑basiert)
+
+Der Internetzugang ist grundsätzlich offen, aber gezielt eingeschränkt:
+
+* problematische Inhalte werden auf DNS‑Ebene ausgeblendet,
+* Nachrichtenseiten sind standardmäßig nicht erreichbar,
+* einzelne Seiten können projektbezogen freigegeben werden.
+
+:::info Warum DNS‑Filter?
+Der Filter verhindert nicht den Zugang zum Internet an sich, sondern sorgt dafür, dass bestimmte Inhalte nicht einfach aufgerufen werden können. Zusammen mit dem einfach Account ohne Admin-Rechte ist dies ein wirksamer, wenn auch nicht perfekter Schutzmechanismus.
 :::
 
-### 3. Geschlossene Kommunikation (Matrix/Element)
+---
 
-Für die Kommunikation nutzen wir einen eigenen Chat-Server (kids.tinkerers.de):
+### 3. Geschlossene Kommunikation
 
-- **Keine Fremden** – Der Server ist geschlossen, es gibt keine Verbindung zu anderen Chat-Netzwerken
-- **Nur bekannte Teilnehmer** – Accounts werden nur auf Anfrage erstellt
-- **Volle Funktionalität** – Gruppenchats, Videotelefonie und Bildschirmfreigabe funktionieren
-- **Kein Abdriften** – Anders als bei Discord, WhatsApp oder Slack gibt es keine Ablenkung durch fremde Server oder Kanäle
+Die Kommunikation findet in einem **abgeschlossenen Chat‑System** statt:
 
-```mermaid
-flowchart LR
-    subgraph Geschlossen["Geschlossener Matrix-Server"]
-        kind1["Kind 1"]
-        kind2["Kind 2"]
-        mentor["Mentor"]
-    end
+* keine Fremdkontakte,
+* keine Anbindung an öffentliche Netzwerke,
+* Fokus auf Gruppenkommunikation statt private Einzelchats.
 
-    subgraph Extern["Externe Dienste"]
-        discord["Discord"]
-        whatsapp["WhatsApp"]
-        andere["Andere Matrix-Server"]
-    end
+So werden typische Messenger‑Dynamiken vermieden, ohne Kommunikation grundsätzlich zu verhindern.
 
-    kind1 <--> kind2
-    kind1 <--> mentor
-    kind2 <--> mentor
+---
 
-    Geschlossen -.->|"keine Verbindung"| Extern
+## Privates Netzwerk (Zugriffskontrolle, kein Inhaltsschutz)
 
-    style discord fill:#ffcccc
-    style whatsapp fill:#ffcccc
-    style andere fill:#ffcccc
-    style kind1 fill:#90EE90
-    style kind2 fill:#90EE90
-    style mentor fill:#90EE90
-```
+Zusätzlich existiert ein privates Netzwerk (z. B. über Tailscale).
 
-## Remote-Support
+Dieses dient **nicht** dazu, Inhalte zu filtern oder den Internetzugang einzuschränken. Es existiert ausschließlich, um:
 
-Ich habe jederzeit die Möglichkeit, auf den Rechner deines Kindes zuzugreifen – aber nur über das geschützte Netzwerk:
+* administrativen Zugriff zu ermöglichen,
+* Remote‑Unterstützung sicher bereitzustellen,
+* direkte Erreichbarkeit der Geräte aus dem offenen Internet zu vermeiden.
 
-- **Schnelle Hilfe** – Wenn dein Kind nicht weiterkommt, kann ich direkt helfen
-- **Bildschirmfreigabe** – Ich sehe genau das gleiche wie dein Kind und kann Probleme live lösen
-- **Keine Fremdzugriffe** – Nur ich habe diesen Zugang, niemand sonst
+Es handelt sich hierbei **nicht um eine Schutzebene gegen Inhalte**, sondern um eine Maßnahme zur Zugriffskontrolle auf die Endgeräte der Kinder.
 
-:::tip Transparenz
-Der Remote-Zugang ist kein verstecktes Feature – dein Kind weiß davon. Es ist ein Werkzeug, um schnell und effektiv zu helfen, wenn etwas nicht funktioniert.
+:::note Hinweis zu Cloud‑Systemen und Erreichbarkeit
+Ein in der Cloud betriebener Rechner ist grundsätzlich zunächst aus dem Internet erreichbar, da sich Kinder (z. B. per Remote‑Desktop‑Verbindung) aktiv mit diesem System verbinden müssen. In diesem Punkt unterscheidet sich ein Cloud‑Rechner technisch von einem klassischen Heimcomputer, der normalerweise nicht direkt über eine öffentliche IP‑Adresse erreichbar ist.
+
+Um diese Angriffsfläche zu reduzieren, werden Cloud‑Rechner in ein privates Netzwerk (z. B. Tailscale) eingebunden. Dadurch werden sie für das offene Internet unsichtbar, bleiben aber für berechtigte Zugriffe erreichbar. In gewisser Weise wird damit der umgekehrte Weg eines Heimcomputers gegangen: Während ein Heimcomputer durch das VPN sichtbar wird, wird ein Cloud‑Rechner durch das VPN abgeschirmt.
+
+Der Zugriff erfolgt mehrstufig. Je nach Konfiguration befindet sich entweder nur der Cloud‑Rechner oder zusätzlich auch das Administrationssystem im privaten Netzwerk. Endgeräte der Kinder oder Eltern müssen nicht zwingend Teil dieses Netzwerks sein.
+
+Unabhängig davon ist ein zentraler Sicherheitsfaktor die Wahl **starker Passwörter** für Remote‑Zugänge. Für Cloud‑Systeme werden initial sehr starke Passwörter vergeben. Werden diese geändert, müssen sie ebenfalls hohen Sicherheitsanforderungen genügen. Einfache oder naheliegende Passwörter (z. B. der Vorname des Kindes) stellen ein erhebliches Sicherheitsrisiko dar und sind ausdrücklich ungeeignet.
 :::
 
-## Verschiedene Hardware-Optionen
+---
 
-Je nach Situation nutzen wir unterschiedliche Hardware, aber alle Geräte sind identisch abgesichert:
+## Remote‑Unterstützung
 
-| Option | Beschreibung | Sicherheit |
-|--------|--------------|------------|
-| Mini-PC | Kleiner, leiser Computer | Vollständig ins Schutznetzwerk eingebunden |
-| Raspberry Pi | Günstiger Einplatinencomputer | Vollständig ins Schutznetzwerk eingebunden |
-| Cloud-Server | Virtueller Server bei Hetzner | Vollständig ins Schutznetzwerk eingebunden |
+Für technische Unterstützung existieren Remote‑Zugänge (z. B. Bildschirmfreigabe oder administrativer Zugriff).
 
-Egal welche Option gewählt wird – die Sicherheitsmaßnahmen sind überall die gleichen.
+Diese Zugänge:
 
-## Updates und Wartung
+* sind technisch abgesichert,
+* nur für berechtigte Personen nutzbar,
+* dienen ausschließlich der Unterstützung im Mentoring‑Kontext.
 
-Die Systeme werden automatisch aktuell gehalten:
+Sie machen das Gerät nicht „offen“, sondern vermeiden unsichere Notlösungen wie Port‑Freigaben im offenen Internet.
 
-- **Automatische Sicherheitsupdates** – Das Betriebssystem (Linux) aktualisiert sich selbstständig
-- **Keine manuelle Wartung nötig** – Du musst dich um nichts kümmern
-- **Bei Problemen greife ich ein** – Falls doch etwas schiefgeht, kümmere ich mich darum
+---
+
+## Nutzungseinschränkungen: Arbeitsgerät statt Allzweck‑Computer
+
+:::warning Hinweis zur Nutzung der Entwicklungsumgebung
+Die hier beschriebenen Geräte sind **Arbeitsgeräte für das Mentoring** – vergleichbar mit einem Dienst‑ oder Arbeitscomputer.
+
+Dienste wie **YouTube**, klassische Nachrichtenseiten, soziale Netzwerke oder private Messenger (z. B. WhatsApp) sind auf diesen Systemen bewusst **gesperrt**. Dies gilt auch dann, wenn solche Dienste grundsätzlich einen Lern‑ oder Informationszweck erfüllen könnten.
+
+Der Grund dafür ist nicht Misstrauen gegenüber den Kindern, sondern die Erfahrung, dass diese Plattformen:
+
+* unkontrolliert Inhalte nachliefern,
+* leicht zu Ablenkung führen,
+* und technisch kaum verlässlich auf einen reinen „Kindermodus“ beschränkt werden können.
+
+Diese Entwicklungsumgebung ist kein Ort für Medienkonsum, sondern ein **konzentrierter Lern‑ und Arbeitsraum**. Um Fairness, Ruhe und gleiche Bedingungen für alle Kinder zu gewährleisten, werden hier **keine individuellen Ausnahmen** gemacht.
+
+Wenn Eltern möchten, dass ihre Kinder YouTube, Nachrichtenangebote oder Messenger nutzen, sollte dies **auf separaten Geräten oder in getrennten Benutzerumgebungen** geschehen. Diese Entscheidung und Begleitung liegt ausdrücklich bei den Eltern.
+
+So werden auch die Kinder geschützt, die selbst kein Interesse an solchen Diensten haben – ähnlich wie in einer schulischen oder beruflichen Arbeitsumgebung.
+:::
+
+---
+
+## Hardware‑Optionen
+
+| Option       | Beschreibung           |
+| ------------ | ---------------------- |
+| Mini‑PC      | Lokales Gerät          |
+| Raspberry Pi | Einplatinencomputer    |
+| Cloud‑Server | Virtuelles System (EU) |
+
+Die beschriebenen Sicherheitsmechanismen sind unabhängig von der verwendeten Hardware identisch.
+
+---
+
+## Hinweis: Verantwortung und Grenzen
+
+:::danger Best‑Effort‑Hinweis
+Die Umgebung wird nach bestem Wissen und Gewissen gestaltet und abgesichert. Ein vollständiger Schutz kann jedoch nicht garantiert werden.
+
+Ziel ist es, Kinder **nicht unnötig in Versuchung zu führen**.
+Kinder, die gezielt nach problematischen Inhalten suchen, können technisch nicht vollständig aufgehalten werden.
+
+Die Verantwortung bleibt bei den Eltern. Diese Umgebung ersetzt keine elterliche Begleitung, sondern unterstützt sie.
+:::
+
+---
 
 ## Zusammenfassung
 
-Die Entwicklungsumgebung deines Kindes ist so aufgebaut, dass:
+Die Entwicklungsumgebung bietet:
 
-1. **Kein ungeeigneter Inhalt** durchkommt (Inhaltsfilter)
-2. **Keine fremden Personen** Kontakt aufnehmen können (geschlossener Chat)
-3. **Schnelle Hilfe** bei technischen Problemen möglich ist (Remote-Support)
-4. **Alles verschlüsselt** und privat bleibt (privates Netzwerk)
+1. vollen Internetzugang mit gezielten Einschränkungen,
+2. reduzierte Versuchungen durch Filter und eingeschränkte Rechte,
+3. keine Fremdkontakte,
+4. Fokus auf Lernen statt Ablenkung.
 
-Dein Kind kann sich voll aufs Programmieren konzentrieren – in einer Umgebung, die so sicher wie möglich ist.
+Sie ist kein abgeschotteter Raum, sondern ein **bewusst gestalteter Lernrahmen**, der Kinder beim sicheren Einstieg in die digitale Welt unterstützt.
