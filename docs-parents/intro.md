@@ -42,6 +42,7 @@ In diesem Bereich findest du:
 
 - **[Hardware-Entscheidung](/eltern/hardware-entscheidung)** - Eigene Hardware kaufen oder Cloud-Lösung nutzen?
 - **[Hardware-Anforderungen](/eltern/hardware-anforderungen)** - Welche Hardware wird benötigt?
+- **[Sicherheit](/eltern/sicherheit)** - Wie ist die Entwicklungsumgebung abgesichert?
 - **[Das Mentoring-Programm](/eltern/kursformat)** - Wie läuft das Mentoring ab?
 - **[Mögliche Themen](/eltern/lerninhalte)** - Woran könnte dein Kind arbeiten?
 - **[FAQ](/eltern/faq)** - Häufig gestellte Fragen
