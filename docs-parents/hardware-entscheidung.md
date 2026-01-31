@@ -6,6 +6,15 @@ sidebar_position: 2
 
 Die wichtigste Frage zuerst: **Welche Hardware soll dein Kind für das Mentoring nutzen?**
 
+:::warning Bitte keine Hardware kaufen ohne Rücksprache!
+Bevor du Hardware kaufst, sprich bitte **einmal kurz mit mir** (Levin Keller). So kann ich sicherstellen, dass:
+- Die Hardware für das Mentoring geeignet ist
+- Du nicht zu viel oder das Falsche kaufst
+- Wir die beste Lösung für eure Situation finden
+
+**Kontaktiere mich einfach kurz** – ich helfe gerne bei der Auswahl!
+:::
+
 ## Die Ausgangssituation
 
 Es ist völlig verständlich, dass du nicht sofort mehrere hundert Euro für Hardware ausgeben möchtest, wenn du noch nicht weißt, ob dein Kind langfristig am Mentoring teilnehmen wird. Vielleicht möchte dein Kind das Mentoring erst einmal ausprobieren, bevor ihr in dedizierte Hardware investiert.
